@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>My WEb Site</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+.navig{
+        padding-left: 38em;
+
+    }
+header
+{
+    background-color: #080808;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 100px;
+}
+
+.logo{
+            width: 140px;
+            font-size: 1.9em;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+        }
+        .spanC{
+            color:#3a6cf4;
+            
+        }
+
+        .navig a{
+            color: white;
+            position: relative;
+            margin-left: 13px;
+            text-decoration: none;
+        }
+        .navig a::after{
+            content: "";
+            width: 0;
+            height: 3px;
+            background: #3a6cf4;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+        }
+        .navig a:hover::after{
+            transition: all 0.7s ease;
+            width: 100%;
+        }
+        .login{
+            font-size: 1.7em;
+        }
+.section{
+    padding: 100px 200px;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #080808;
+}
+
+.main div{
+    margin-left:5em
+}
+        .main div h2{
+            color: white;
+            
+        }
+        .typeing{
+            
+            color: #3a6cf4;
+            width: 100%;
+            font-size: 1.3em;
+        }
+        .name{
+            color: #3a6cf4;
+        }
+.main div h2 {
+    font-size: 2.5em;
+}
+.title
+{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.bottom-arrow i{
+            font-size: 2em;
+            
+        }
+.bottom-arrow{
+    cursor: pointer;
+    position: absolute;
+    bottom: 70px;
+    right: 48%;
+    transform-origin: right bottom;
+}
+
+.cards{
+    min-height: 100vh;
+    background-color: #080808;
+}
+.content
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card1 {
+    background-color: #262626;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgb(54, 53, 53);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: all 0.5s ease;
+        }
+        .card1:hover{
+            transform: translateY(-15px);
+            background-color: #3a6cf4;
+        }
+        .icon {
+        color: #3a6cf4;
+        font-size: 8em;
+        text-align: start;
+}
+        .info {
+            text-align: center;
+        }
+        .info h3 {
+            font-size: 1.6em;
+            text-align: start;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .info p {
+            color: white;
+        }
+.line{
+    width: 100%;
+    color: #000;
+    border: 1px #ffffff solid;
+}
+.projects
+{
+    background-color: #080808;
+    color: white;
+    min-height: 100vh;
+}
+.projects .content
+{
+    margin-top: 30px;
+}
+.project-card
+        {
+            
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 20em;
+            position: relative;
+            width: 23em;
+            transition: all 0.5s ease;
+            margin: 20px;
+            transition: 0.7s ease;
+            
+            
+        }
+
+        .project-card:hover img
+        {
+            transform: scale(1.1);
+            
+
+        }
+        .brd{
+            border-radius: 10px;
+        }
+        
+        .project-card img
+        {
+            width: 100%;
+            display: block;
+           
+        }
+        .project .content {margin-top: 30px;}
+        .layer{
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0,0,0,0.6),#3a6cf4);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            transition: height 0.5s;
+        }
+        .layer h3 {
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .layer a{
+            margin-top: 20px;
+            color: #3a6cf4;
+            text-decoration: none;
+            
+            line-height: 60px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .layer a i {
+            font-size: 18px;
+        }
+        .project-card:hover .layer{
+            height: 100%;
+        }
+
+
+.footer
+{
+    background-color: #080808;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-title
+{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.footer-title span 
+{
+    color: #3a6cf4;
+}
+.footer .social-icns a
+{
+    font-size: 1.3em;
+    padding: 40px 1px 0 0;
+}
+/*alert swite*/
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    background-color: #19191a;
+    color: white;
+}
+
+@media (max-width:1023px) {
+    header{
+        padding: 12px 20px; 
+    }
+    .navig{
+        padding-left: 0;
+
+    }
+    .title{
+        font-size: 1.8em;
+
+    }
+    .section{
+        padding: 80px 20px;
+    }
+    .main-content h2 {
+        font-size: 1em;
+    }
+    .main-content h3{
+        font-size: 1.6em;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+    
+    }
+}
+@media (max-width:641px) {
+    body{
+        font-size: 12px;
+
+    }
+    .main-content h2{
+        font-size: 0.8em;
+    }
+    .main-content h3{
+        font-size: 1.4em;
+
+    }
+    .bottom-arrow{
+    right: 48%;
+}
+}
+@media (max-width:300px) {
+    body{
+        font-size: 10px;
+    }
+    
+}
+</style>
+<body>
+    
+    <header class="heade">
+        <a class="logo" href="#" ><span class="spanC">C</span>haali</a>
+        <nav class="navig">
+            <a class="clrchange" href="#services">Services</a>
+            <a class="clrchange" href="#projects">Projects</a>
+            <a class="clrchange" href="#contact">Contact</a>
+            
+        </nav>
+        <a class="login" href="/login"><i class='bx bx-log-in' style='color:#ffffff'  ></i></a>
+
+    </header> 
+    <section class="main">
+        <div>
+            <h2>Hi,<br>I'am <span class="name">Hamza</span><br><span class="typeing"> </span>
+            </h2>
+            <a class="bottom-arrow" href="#services"><i class='bx bxs-chevron-down bx-flip-horizontal bx-flashing' style='color:rgb(151, 147, 147)'  ></i></a>
+        </div>
+        
+
+    </section>
+    <hr class="line">
+    <section class="cards" id="services">
+        <br>
+        <br>
+        <br>
+        <h2 class="title">services</h2>
+            <div class="content">
+                <div class="card1">
+                    <div class="icon">
+                      <i class='bx bx-bot' style='color:#fff'  ></i>
+                    </div>
+                    <div class="info">
+                      <h3>Bots </h3>
+                      <p>Creating Telegram and Whatsapp bots with Python and JavaScript</p>
+                    </div>
+                  </div>
+                  <div class="card1">
+                    <div class="icon">
+                      <i class='bx bxl-windows' style='color:#fff'></i>
+                    </div>
+                    <div class="info">
+                      <h3>Windows Applications</h3>
+                      <p>Creating GUI applications for Windows in Python</p>
+                    </div>
+                  </div>
+                  <div class="card1">
+                    <div class="icon">
+                      <i class='bx bxl-android' style='color:#fff' ></i>
+                    </div>
+                    <div class="info">
+                      <h3>Custom Rom </h3>
+                      <p>Building a custom Android system for the phone</p>
+                    </div>
+                  </div>
+            </div>
+    </section>
+    <hr class="line">
+    <section class="projects" id="projects">
+        <br>
+        <br>
+        <br>
+        <h2 class="title">Projects</h2>
+        <div class="content" id="contente">
+            
+         
+        </div>
+        <br>
+        
+    </section>
+    <hr class="line">
+    <section class="cards contact" id="contact">
+        <br>
+        <br>
+        <br>
+        <h2 class="title">Let's work together</h2>
+        <div class="content">
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-solid fa-phone" style="color: #fff;"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p>+212625424362</p>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope" style="color: #fff;"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>hamzach1423@gmail.com</p>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-brands fa-telegram" style="color: #73b5f0;"></i>
+                </div>
+                <div class="info">
+                    <h3>Telegram</h3>
+                    <p>t.me/hamzaChPro</p>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-brands fa-square-whatsapp" style="color: #04c811;"></i>
+                </div>
+                <div class="info">
+                    <h3>Whatsapp</h3>
+                    <p>wa.me/message/DSO3E4325VVQK1</p>
+                </div>
+            </div>
+        </div>
+        <br>
+          
+    </section>
+    <hr class="line"> 
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>Chaali Hamza</span></p>
+        <div class="social-icns" >
+            <a href="https://www.youtube.com/channel/UCPFL-picNdanmhCLatBY8oQ"><i class="fa-brands fa-youtube" style="color: #df3434;"></i></a>
+            <a href="link web fc"><i class="fa-brands fa-facebook" style="color: #2e60b8;"></i></a>
+            <a href="https://github.com/DevCHaali"><i class="fa-brands fa-github" style="color: #fff;"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const documentList = document.getElementById('contente');
+            // جلب البيانات من ملف JSON
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // عرض المستندات المحفوظة وقائمة المدن التي تمت المساعدة فيها
+                    data.crad.forEach(city => {
+                        const documentItem = document.createElement('div');
+                        
+                        const web = city.link
+                        documentItem.innerHTML = `
+                        <div class="project-card">
+        
+        
+                            <img src="img/${city.img}" >
+                            <div class="layer">
+                                <h3>${city.name}</h3>
+                                <p>${city.dicription}</p>
+                                <a href="//${city.link}" target="_blank"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        
+                        `
+                    
+                        documentList.appendChild(documentItem);
+
+                       
+                    });
+
+                    
+                })
+                .catch(error => console.error('حدث خطأ أثناء جلب البيانات:', error));
+        });
+    </script>
+    <script src="typed.min.js"></script>
+    <script>
+        var typed = new Typed('.typeing',{
+            strings : ['','Programming student ','Web Designer ','Web Developer '],
+            typeSpeed : 120,
+            backSpeed: 50,
+            loop:true
+        })
+    </script>
+    <!---socket-->
+    <script src="https://cdn.socket.io/socket.io-4.0.1.js"></script>
+    <script>
+  const socket = io();
+
+  $('form').submit(() => {
+    socket.emit('chat message', $('#message').val());
+    $('#message').val('');
+    return false;
+  });
+
+  socket.on('chat message', (msg) => {
+    $('#messages').append($('<li>').text(msg));
+  });
+</script>
+
+</body>
+</html>
