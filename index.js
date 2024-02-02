@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
 });
 // التحقق من وجود ملف JSON
 let data = { crad: [] }; // بيانات افتراضية
-const dataFilePath = 'public/data.json';
+const dataFilePath = 'data.json';
 
 
 if (fs.existsSync(dataFilePath)) {
@@ -46,19 +46,19 @@ app.use(session({
 }));
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Root route ("/") to send the "home.html" file
 app.get('/', (req, res) => {
-    const homeFilePath = path.join(__dirname, 'public', 'home.html');
+    const homeFilePath = path.join(__dirname, '/', 'home.html');
     res.sendFile(homeFilePath);
 });
 
 // Login route ("/login") to send the "login.html" file
 app.get('/login', (req, res) => {
-    const loginFilePath = path.join(__dirname, 'public', 'login.html');
+    const loginFilePath = path.join(__dirname, '/', 'login.html');
     res.sendFile(loginFilePath);
 });
 
@@ -85,19 +85,19 @@ app.post('/login', (req, res) => {
 }));
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Root route ("/") to send the "home.html" file
 app.get('/', (req, res) => {
-    const homeFilePath = path.join(__dirname, 'public', 'home.html');
+    const homeFilePath = path.join(__dirname, '/', 'home.html');
     res.sendFile(homeFilePath);
 });
 
 // Login route ("/login") to send the "login.html" file
 app.get('/login', (req, res) => {
-    const loginFilePath = path.join(__dirname, 'public', 'login.html');
+    const loginFilePath = path.join(__dirname, '/', 'login.html');
     res.sendFile(loginFilePath);
 });
 
@@ -121,7 +121,7 @@ app.post('/login', (req, res) => {
 // صفحة الإدارة
 app.get('/admin', (req, res) => {
     if (req.session.loggedin) {
-        res.sendFile(__dirname + '/public/admin.html');
+        res.sendFile(__dirname + '/admin.html');
     } else {
         res.redirect('/login');
     }
@@ -230,7 +230,7 @@ app.post('/profile', upload.single('avatar'), (req, res) => {
 });
   /// show image for page html 
   app.get('/images', (req, res) => {
-    const imgFolderPath = path.join(__dirname, 'public/img'); // استبدل 'img' بالمجلد الذي يحتوي على الصور
+    const imgFolderPath = path.join(__dirname, '/img'); // استبدل 'img' بالمجلد الذي يحتوي على الصور
 
     fs.readdir(imgFolderPath, (err, files) => {
         if (err) {
@@ -258,7 +258,7 @@ app.post('/api/delete-image', (req, res) => {
     const imageName = req.body.imageName;
 
     // تحقق من وجود الصورة قبل حذفها
-    const imagePath = path.join(__dirname, '/public/img', imageName);
+    const imagePath = path.join(__dirname, '/img', imageName);
 
     if (fs.existsSync(imagePath)) {
         // حذف الصورة إذا كانت موجودة
